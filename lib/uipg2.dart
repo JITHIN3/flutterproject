@@ -8,6 +8,7 @@ class Uipage2 extends StatefulWidget {
 }
 
 class _Uipage2State extends State<Uipage2> {
+  var checkedValue=true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +39,7 @@ class _Uipage2State extends State<Uipage2> {
                   style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
                     border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
-                    focusedBorder: OutlineInputBorder(
+                    focusedBorder: OutlineInputBorder(borderRadius:BorderRadius.circular(25),
                       borderSide: BorderSide(color: Colors.white),
 
                     ),
@@ -59,7 +60,7 @@ class _Uipage2State extends State<Uipage2> {
                   style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
                     border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
-                    focusedBorder: OutlineInputBorder(
+                    focusedBorder: OutlineInputBorder(borderRadius:BorderRadius.circular(25),
                       borderSide: BorderSide(color: Colors.white),
                     ),
 
@@ -74,6 +75,18 @@ class _Uipage2State extends State<Uipage2> {
                   ),
                 ),
               ),
+              Padding(padding: EdgeInsets.only(left: 1,right: 1),
+                child:CheckboxListTile(title: Text("Prefilled boolean field",style:TextStyle(color: Colors.white),),
+
+                  value: checkedValue,
+                  onChanged: (newValue) {
+                    setState(() {
+                      checkedValue = newValue!;
+                    });
+                  },
+                  controlAffinity: ListTileControlAffinity.leading,
+                ),
+              ),
               Padding(
                   padding: EdgeInsets.all(10),
                   child: ElevatedButton(
@@ -81,10 +94,11 @@ class _Uipage2State extends State<Uipage2> {
                         primary: Color(-1),
                         fixedSize: Size(340, 50),
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20))),
+                            borderRadius: BorderRadius.circular(25))),
                     onPressed: () {
                       Navigator.pushNamed(context, '/third');
                     },
+
                     child: Text(
                       'SUBMIT',
                       style: TextStyle(color: Colors.black),
@@ -97,7 +111,7 @@ class _Uipage2State extends State<Uipage2> {
                         primary: Color(-1),
                         fixedSize: Size(340, 50),
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20))),
+                            borderRadius: BorderRadius.circular(25))),
                     onPressed: () {},
                     child: Text(
                       'CLEAR',

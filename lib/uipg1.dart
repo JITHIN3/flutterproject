@@ -34,8 +34,8 @@ class _UipageState extends State<Uipage> {
                     style: TextStyle(color: Color(-1)),
                     decoration: InputDecoration(
                         border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20)),
-                        focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(25)),
+                        focusedBorder: OutlineInputBorder(borderRadius:BorderRadius.circular(25),
                             borderSide: BorderSide(color: Color(-1))),
 
                         labelText: "Email",
@@ -54,8 +54,8 @@ class _UipageState extends State<Uipage> {
                     style: TextStyle(color: Color(-1)),
                     obscureText: true,
                     decoration: InputDecoration(
-                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
-                        focusedBorder: OutlineInputBorder(
+                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
+                        focusedBorder: OutlineInputBorder(borderRadius:BorderRadius.circular(25),
                             borderSide: BorderSide(color: Color(-1))),
 
                         labelText: "Password",
@@ -75,7 +75,7 @@ class _UipageState extends State<Uipage> {
                           primary: Color(-1),
                           fixedSize: Size(340, 50),
                           shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20))),
+                              borderRadius: BorderRadius.circular(25))),
                       onPressed: () {
                         Navigator.pushNamed(context, '/second');
                       },

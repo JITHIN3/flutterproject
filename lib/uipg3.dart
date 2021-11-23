@@ -8,8 +8,7 @@ class Uipage3 extends StatefulWidget {
 }
 
 class _Uipage3State extends State<Uipage3> {
-  bool _value = false;
-  int val = -1;
+  var _value=3;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +28,7 @@ class _Uipage3State extends State<Uipage3> {
             Container(
               padding: EdgeInsets.only(top: 20),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(200),
+                borderRadius: BorderRadius.circular(25),
               ),
             ),
             Padding(
@@ -38,8 +37,8 @@ class _Uipage3State extends State<Uipage3> {
                 style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20)),
-                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(25)),
+                  focusedBorder: OutlineInputBorder(borderRadius:BorderRadius.circular(25),
                     borderSide: BorderSide(color: Colors.white),
                   ),
                   hintText: 'I am prefilled 🔥 yeah',
@@ -53,35 +52,16 @@ class _Uipage3State extends State<Uipage3> {
                 ),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.all(10),
-              child: TextField(
-                style: TextStyle(color: Colors.white),
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20)),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),
-                  ),
-                  hintText: 'Enter Details',
-                  hintStyle: TextStyle(color: Colors.white),
-                  labelText: 'Details',
-                  labelStyle: TextStyle(color: Colors.white),
-                  prefixIcon: Icon(
-                    Icons.emoji_emotions_outlined,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-            ),
+Padding(padding: EdgeInsets.all(10),
+),
            ListTile(
-              title: Text("Option 1"),
-              leading: Radio(
+              title: Text("Option 1",style: TextStyle(color: Colors.white),),
+             leading: Radio<int>(
                 value: 2,
-                groupValue: val,
+                groupValue: _value,
                 onChanged: (value) {
                   setState(() {
-                    _value=true;
+                    _value=value!;
 
                   });
                 },
@@ -89,13 +69,13 @@ class _Uipage3State extends State<Uipage3> {
               ),
             ),
             ListTile(
-              title: Text("Option 2"),
-              leading: Radio(
-                value: 2,
-                groupValue: val,
+              title: Text("Option 2",style: TextStyle(color: Colors.white),),
+              leading: Radio<int>(
+                value: 3,
+                groupValue: _value,
                 onChanged: (value) {
                   setState(() {
-                    _value=true;
+                    _value=value!;
 
                   });
                 },
@@ -103,13 +83,13 @@ class _Uipage3State extends State<Uipage3> {
               ),
             ),
             ListTile(
-              title: Text("Option 3"),
-              leading: Radio(
-                value: 2,
-                groupValue: val,
+              title: Text("Option 3",style: TextStyle(color: Colors.white),),
+              leading: Radio<int>(
+                value: 4,
+                groupValue: _value,
                 onChanged: (value) {
                   setState(() {
-                    _value=true;
+                    _value=value!;
 
                   });
                 },
@@ -123,7 +103,7 @@ class _Uipage3State extends State<Uipage3> {
                       primary: Color(-1),
                       fixedSize: Size(340, 50),
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20))),
+                          borderRadius: BorderRadius.circular(25))),
                   onPressed: () {},
                   child: Text(
                     'LOGIN',
